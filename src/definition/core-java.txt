@@ -1,65 +1,181 @@
-Please answer the below core-java Questions:
+***ANSWER ALL QUESTIONS BELOW***
 
-What is programing language?
-Ans :
+What is a programming language?
+Answer:
 
-What jdk contains or composed of and define each components?
-What is IDE?
-What are the IDEs available in the market to support java?
+What is a JDK composed of? Define each components?
+Answer:
+
+What is an IDE?
+Answer:
+
+What are some of the most popular Java IDEs available in the market?
+Answer:
+
 Explain the entire java life cycle.
-what is class?
-What is object?
+Answer:
+
+What is a class?
+Answer:
+
+What is an object?
+Answer:
+
 What is the entry point of an application?
-Why main is static?
+Answer:
+
+Why is the main() static?
+Answer:
+
 Which class is the superclass of all classes?
+Answer:
+
 What is difference between path and classpath variables?
+Answer:
+
 What is the difference between an Interface and Abstract class?
-Can you make an Object from an Interface and Abstract class ? if not how do you use it ?
-what is Access Specifier?
-What is OOP ? Define each feature of java OOP.
+Answer:
+
+Can you make an Object from an Interface and Abstract class? If yes or no, how would you do it?
+Answer:
+
+What is Access Modifier?
+Answer:
+
+What is OOP? Define each OOP concept.
+Answer:
+
 What is Java Package and which package is imported by default?
-What is API? Name list of API that you have used so far.
-Does java support multiple inheritance, explain why or why not?
-What is method overloading and when it happens?
-Explain exceptions in java and how to handle it.
-What is static keyword in java? How it has been used in variables and methods ?
-What is final and how it has been used variables and methods?
-What is final, finally and finalize?
-What is a constructor ?
+Answer:
+
+What is an API? List some API's that you have used so far.
+Answer:
+
+Does java support multiple inheritance? Why or why not?
+Answer:
+
+What is method overloading and when does it happen?
+Answer:
+
+Explain exceptions in java and how to handle them.
+Answer:
+
+What is static keyword? When and how do we use it?
+Answer:
+
+What is final keyword? When and how do we use it?
+Answer:
+
+Explain the difference between final, finally and finalize?
+Answer:
+
+What is a constructor?
+Answer:
+
 Can we have multiple constructors in a class?
+Answer:
+
 If we don't have a constructor declared, what is called during the object creation?
-What is "this" keyword in java ?
-What is "super" keyword in java? How many possible way can you use?
-What is JVM stand for ?
+Answer:
+
+What is "this" keyword in Java? When would we use it?
+Answer:
+
+What is "super" keyword in Java? What are some scenarios we would use it?
+Answer:
+
+What does JVM stand for?
+Answer:
+
 Is JVM platform independent?
-What version of java are you using?
-What is JAR stand for ?
+Answer:
+
+What version of Java are you using?
+Answer:
+
+What does JAR stand for?
+Answer:
+
 What is the difference between JDK and JVM?
+Answer:
+
 What is the difference between JVM and JRE?
-What is compile time and run time?
+Answer:
+
+Explain the difference between compile-time and run-time?
+Answer:
+
 What is heap?
-How java manage it's memory?
+Answer:
+
+How does Java manage its memory?
+Answer:
+
 What is the difference between String, StringBuffer and StringBuilder?
+Answer:
+
 What is Singleton class?
+Answer:
+
 What is Serialization and Deserialization?
-when to use transient variable in java?
-Difference between while and do..while loop?
+Answer:
+
+Explain the difference between While and Do..While loops?
+Answer:
+
 What is Enum?
+Answer:
+
 What is Iterator?
-Which one will take more memory, an int or Integer?
-Why is String Immutable in Java?
+Answer:
+
+Which one will take more memory: an int or Integer? Why?
+Answer:
+
+Why are Strings considered to be immutable in Java?
+Answer:
+
 What is constructor chaining in Java?
+Answer:
+
 The difference between Serial and Parallel Garbage Collector?
-What is JIT stands for?
-Explain Java Heap space and Garbage collection?
+Answer:
+
+What does JIT stands for?
+Answer:
+
+Explain the process of Java garbage collection?
+Answer:
+
 Can you guarantee the garbage collection process?
+Answer:
+
 What is the difference between stack and heap in Java?
-What is reflection in java and why is it useful?
-what is multithreading in java?
-What is the use of synchronization in Java?
-What is Framework?
-What are the testing Framework available in java?
-Difference between jUnit and testNG?
+Answer:
+
+What is reflection in Java and why is it useful?
+Answer:
+
+What is multithreading in Java?
+Answer:
+
+What is synchronization in Java?
+Answer:
+
+What is a Framework?
+Answer:
+
+What are the testing Frameworks available in Java?
+Answer:
+
+What are jUnit and testNG?
+Answer:
+
 What are the dependencies for this project?
-what is dependency injection in java?
-What is static binding and dynamic binding?
+Answer:
+
+What is dependency injection in Java?
+Answer:
+
+Explain what static binding and dynamic binding is?
+Answer:

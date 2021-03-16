@@ -4,9 +4,7 @@ import java.io.Serializable;
 
 public class Student implements Serializable {
 
-    /*
-     * Student class have 4 variables which will be constructed as Student Object into List<Student>.
-     */
+    // Student class has 4 instance variables, which will be constructed as Student Object into List<Student>
     public String firstName;
     public String lastName;
     public String score;

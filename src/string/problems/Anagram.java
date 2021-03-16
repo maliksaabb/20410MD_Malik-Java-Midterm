@@ -2,8 +2,13 @@ package string.problems;
 
 public class Anagram {
 
+    /*
+    Write a Java Program to check if two Strings are Anagrams.
+        Two String are called Anagrams when both Strings use the same characters but in different order.
+        Example: "CAT" and "ACT", "ARMY" and "MARY", "FART" and "RAFT"
+    */
+
     public static void main(String[] args) {
-        //Write a Java Program to check if the two String are Anagram. Two String are called Anagram when there is
-        //same character but in different order.For example,"CAT" and "ACT", "ARMY" and "MARY".
+
     }
 }

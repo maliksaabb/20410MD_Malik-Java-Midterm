@@ -4,33 +4,32 @@ import java.util.Scanner;
 
 public class EmployeeInfo {
 
-    /*This class can be implemented from Employee interface then add additional methods in EmployeeInfo class.
-     * Also, Employee interface can be implemented into an abstract class.So create an Abstract class
-     * then inherit that abstract class into EmployeeInfo class.Once you done with designing EmployeeInfo class,
-     * go to FortuneEmployee class to apply all the fields and attributes.
-     *
-     * Important: YOU MUST USE the
-     * OOP(abstraction,Encapsulation, Inheritance and Polymorphism) concepts in every level possible.
-     * Use all kind of keywords(super,this,static,final........)
-     * Implement Nested class.
-     * Use Exception Handling.
-     *
+    /*
+    This class should implement the Employee interface. You can do that by directly implementing it, however you must
+        also implement the Employee interface into an abstract class. So create an Abstract class then inherit that
+        abstract class into this EmployeeInfo class. Once you're done with designing EmployeeInfo class,
+        go to FortuneEmployee class to apply all the fields and attributes.
+
+    Important: YOU MUST USE:
+        - OOP (Abstraction, Encapsulation, Inheritance and Polymorphism) concepts in every level possible.
+        - Use all kind of keywords (super, this, static, final, etc)
+        - Implement nested class below (DateConversion)
+        - Use Exception Handling
      */
 
     /*
-     * declare few static and final fields and some non-static fields
+     * Make sure to declare and use static, non-static & final fields
      */
     static String companyName;
 
     /*
-     * You must implement the logic for below 2 methods and
-     * following 2 methods are prototype as well for other methods need to be design,
-     * as you will come up with the new ideas.
+     You must implement the logic for below 2 methods and
+        following 2 methods are prototype as well for other methods need to be design,
+        as you will come up with the new ideas.
      */
 
     /*
-     * you must have multiple constructor.
-     * Must implement below constructor.
+     You must have/use multiple constructors
      */
     public EmployeeInfo(int employeeId) {
 
@@ -41,11 +40,11 @@ public class EmployeeInfo {
     }
 
     /*
-     * This methods should calculate Employee bonus based on salary and performance.
-     * Then it will return the total yearly bonus. So you need to implement the logic.
-     * Hints: 10% of the salary for best performance, 8% of the salary for average performance and so on.
-     * You can set arbitrary number for performance.
-     * So you probably need to send 2 arguments.
+     You need to implement the logic of this method as such:
+        It should calculate Employee bonus based on salary and performance.
+        It should return the total yearly bonus.
+            Example: 10% of salary for best performance, 8% of salary for average performance and so on.
+            You can set arbitrary number for performance, so you probably need to send 2 arguments.
      *
      */
     public static int calculateEmployeeBonus(int numberOfYearsWithCompany) {
@@ -54,9 +53,10 @@ public class EmployeeInfo {
     }
 
     /*
-     * This methods should calculate Employee Pension based on salary and numbers of years with the company.
-     * Then it will return the total pension. So you need to implement the logic.
-     * Hints: pension will be 5% of the salary for 1 year, 10% for 2 years with the company and so on.
+     You need to implement the logic of this method as such:
+        It should calculate Employee pension based on salary and numbers of years with the company.
+        It should return the total pension amount.
+            Example: Employee will receive 5% of salary as pension for every year they are with the company
      *
      */
     public static int calculateEmployeePension() {
@@ -69,8 +69,8 @@ public class EmployeeInfo {
         String convertedJoiningDate = DateConversion.convertDate(joiningDate);
         String convertedTodaysDate = DateConversion.convertDate(todaysDate);
 
-        //implement numbers of year from above two dates
-        //Calculate pension
+        // Figure out how to extract the number of years the employee has been with the company, using the above 2 dates
+        // Calculate pension
 
         return total;
     }

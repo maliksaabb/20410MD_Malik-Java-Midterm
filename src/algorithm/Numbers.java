@@ -19,29 +19,49 @@ public class Numbers {
 
     public static void main(String[] args) throws Exception {
 
+        ConnectToSqlDB connectToSqlDB = new ConnectToSqlDB();
+
         int[] num = new int[1000000];
         storeRandomNumbers(num);
-        ConnectToSqlDB connectToSqlDB = new ConnectToSqlDB();
-        //Selection Sort
+
+        // Selection Sort
         Sort algo = new Sort();
         algo.selectionSort(num);
         long selectionSortExecutionTime = algo.executionTime;
-        System.out.println("Total Execution Time of " + num.length + " numbers in Selection Sort take: " + selectionSortExecutionTime + " milli sec");
+        System.out.println("Total Execution Time of " + num.length + " numbers in Selection Sort took: "
+                + selectionSortExecutionTime + " milliseconds");
+
         connectToSqlDB.insertDataFromArrayToSqlTable(num, "selection_sort", "SortingNumbers");
         List<String> numbers = connectToSqlDB.readDataBase("selection_sort", "SortingNumbers");
         printValue(numbers);
+
         int n = num.length;
         randomize(num, n);
-        //Insertion Sort
+
+        // Insertion Sort
         algo.insertionSort(num);
         long insertionSortExecutionTime = algo.executionTime;
-        System.out.println("Total Execution Time of " + num.length + " numbers in Insertion Sort take: " + insertionSortExecutionTime + " milli sec");
+        System.out.println("Total Execution Time of " + num.length + " numbers in Insertion Sort took: "
+                + insertionSortExecutionTime + " milliseconds");
 
-        //By following above, Continue for rest of the Sorting Algorithm....
+        /*
+         By following the same convention we used for Selection Sort, continue to do the same for all remaining sorting
+            algorithms
+         */
 
-        //Come to conclusion about which Sorting Algo is better in given data set.
+
+        /*
+        Can you come to conclusion about which sorting algorithm is most efficient, given the size of the data set?
+         */
 
     }
+
+
+
+
+    /*
+    HELPER METHODS
+     */
 
     public static void storeRandomNumbers(int[] num) {
         Random rand = new Random();

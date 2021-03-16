@@ -11,16 +11,16 @@ public class CsvReader {
 
     public static void main(String[] args) {
         /*
-         Coma Separated Value(CSV) of your CodeLab status is downloaded and it parsed.
+         Comma-Separated Value(CSV) of CodeLab status is downloaded and it parsed.
          Based on number of solution you solved, message is generated for you.
          You need to find the average score of the class.
          */
 
-        String csvFilePath = System.getProperty("user.dir") + "/src/codelab/status/roster-file.csv";
+        String csvFilePath = System.getProperty("user.dir") + "/src/codelab/status/roster.csv";
         String line = "";
-        String cvsSplitBy = ",";
+        String csvSplitBy = ",";
         BufferedReader br = null;
-        List<Trainee> roster = new ArrayList<Trainee>();
+        List<Trainee> roster = new ArrayList<>();
 
         try {
             br = new BufferedReader(new FileReader(csvFilePath));
@@ -30,16 +30,16 @@ public class CsvReader {
                     lineNumber++;
                     continue;
                 }
-                String[] name = line.split(cvsSplitBy);
+                String[] name = line.split(csvSplitBy);
                 roster.add(new Trainee(name[5].replace("\"", ""), name[4].replace("\"",
                         ""), Integer.parseInt(name[10])));
-
             }
-
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         Collections.sort(roster);
+
         for (Trainee student : roster) {
             if (student.getNumberOfExercisesSolved() >= 500) {
                 System.out.print("You did pretty good-->                    ");
@@ -57,11 +57,9 @@ public class CsvReader {
                 System.out.print("You did not take this exercise seriously-->   ");
                 System.out.println(student.getFirstName() + " " + student.getLastName() + " " + student.getNumberOfExercisesSolved());
             } else if (student.getNumberOfExercisesSolved() < 100) {
-                System.out.print("You are in a bad shape !-->                           ");
+                System.out.print("You are in bad shape !-->                           ");
                 System.out.println(student.getFirstName() + " " + student.getLastName() + " " + student.getNumberOfExercisesSolved());
             }
         }
-
     }
-
 }
