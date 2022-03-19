@@ -1,4 +1,4 @@
-package math.problems;
+package math_problems;
 
 public class PrimeNumber {
 

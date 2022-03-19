@@ -1,5 +1,9 @@
 package algorithm;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Random;
 
@@ -55,6 +59,8 @@ public class Numbers {
          */
 
     }
+
+    static String path = "this is the path";
 
 
 

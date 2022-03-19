@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Properties;
 
@@ -123,9 +124,11 @@ public class ConnectToSqlDB {
             connectToSqlDatabase();
             ps = connect.prepareStatement("DROP TABLE IF EXISTS `" + tableName + "`;");
             ps.executeUpdate();
+
             ps = connect.prepareStatement(
                     "CREATE TABLE `" + tableName + "` (`ID` int(11) NOT NULL AUTO_INCREMENT,`SortingNumbers` bigint(20) DEFAULT NULL,  PRIMARY KEY (`ID`) );");
             ps.executeUpdate();
+
             for (int n = 0; n < ArrayData.length; n++) {
                 ps = connect.prepareStatement("INSERT INTO " + tableName + " ( " + columnName + " ) VALUES(?)");
                 ps.setInt(1, ArrayData[n]);
@@ -194,6 +197,37 @@ public class ConnectToSqlDB {
             e.printStackTrace();
         }
     }
+
+
+    public void insertDataFromHashMapToSqlTable(HashMap<Object, Object> hashMap, String tableName) {
+        try {
+            connectToSqlDatabase();
+            ps = connect.prepareStatement("DROP TABLE IF EXISTS " + tableName + ";");
+            ps.executeUpdate();
+
+            ps = connect.prepareStatement("CREATE TABLE " + tableName + " (`keys` VARCHAR(45) NOT NULL AUTO_INCREMENT, `values` VARCHAR(45) NULL);");
+            ps.executeUpdate();
+
+            for (Object obj : hashMap.keySet()) {
+
+                ps = connect.prepareStatement("INSERT INTO " + tableName + " (`keys`) VALUES(?)");
+                ps.setObject(1, obj);
+                ps.executeUpdate();
+
+                ps = connect.prepareStatement("INSERT INTO " + tableName + " (`values`) VALUES(?)");
+                ps.setObject(1, hashMap.get(obj));
+                ps.executeUpdate();
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     public void insertProfileToSqlTable(String tableName, String columnName1, String columnName2) {
         try {

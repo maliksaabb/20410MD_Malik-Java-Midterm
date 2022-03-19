@@ -1,4 +1,4 @@
-package math.problems;
+package math_problems;
 
 import java.util.ArrayList;
 import java.util.List;

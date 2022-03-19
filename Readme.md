@@ -2,17 +2,24 @@
 
 
 ### Submission Process :
-- Deadline for the Midterm is 11th November EOD.
-- Download the zip of the project --> unzip and open using Intellij --> File --> New --> Project Using Existing Source --> Select the downloaded (unzipped) project's directory --> Create Project From Existing Source --> Next --> Next --> Next --> Next
-- Make sure to add all the lib into your Library of Intellij
-- Create your own repository in github --> make sure your `git remote -v` pointing to your newly created repository (if not, change using git remote set-url) --> push the code in a problem solving basis, which means once one problem is solved, add, commit & push
-- Once your github repo is created, share your github url of the midterm here at --> [click me](https://docs.google.com/spreadsheets/d/1xa0xRvQs5ySBNhmv-eof2sYbQaxiShjqP41vdfwheio/edit?usp=sharing)
+- Hard Deadline: 11th November EOD.
+- Download the zip of the project --> unzip and open using Intellij --> File --> New --> Project Using Existing Source --> 
+Select the downloaded (unzipped) project's directory --> Create Project From Existing Source
+- Make sure to add all required dependencies into your IntelliJ Library
+- Create your own repository in GitHub and verify your local repo is pointing to your newly created remote repo by 
+using `git remote -v` (if not, change using git remote set-url <existing remote name> <new repo URL>) 
+- Make sure you are pushing your code every time you solve a problem or finish a task.
+- IMPORTANT: DO NOT PUSH ANY CODE CONTAINING ANY ERRORS.
+- Once you create your GitHub repo, [click here to add your repo URL](https://docs.google.com/spreadsheets/d/1xa0xRvQs5ySBNhmv-eof2sYbQaxiShjqP41vdfwheio/edit?usp=sharing)
 
-### FYI :
-- You have to complete all the coding problems.
-- Read the questions, there are some code here and there for you guys to explore. Try to understand them how they are working and get the best out of them.
-- Feel free to google. But don't feel free to copy and paste the answer. Try to understand and implement the answers.
-- I would have somebody randomly picked from the class and ask to present and explain on one problem's solution from their submission of the midterm .
+### IMPORTANT NOTES:
+- Must complete all coding problems.
+- Read the questions thoroughly and understand what is being asked of you. There are files/code for you to explore/learn from. 
+Try to understand things, and how everything is working.
+- Google should be used to learn, however, don't feel free to copy and paste answers. You only hurt yourself if you copy and don't try
+to understand the solution.
+- Once submissions are in, we will be reviewing the midterm together. I will be randomly calling on individuals to present their
+solutions.
 
 
-# BEST OF LUCK
+#### ***ENJOY THE PROCESS***

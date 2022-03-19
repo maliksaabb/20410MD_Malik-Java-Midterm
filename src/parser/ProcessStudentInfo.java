@@ -14,7 +14,7 @@ import org.xml.sax.SAXException;
 public class ProcessStudentInfo {
 
     /*
-     * Under XmlReader class, the parseData() will return list of Student Info which will contain Student first name, last name and score.
+     * In XmlReader class, the parseData() method will return a list of Student Info which will contain Student first name, last name and score.
      * You need to implement the method name "convertIntToChar()" which will convert String score into char Grade.('A'for 90 to 100,'B'for 80 to 89 and
      * 'C' for 70 to 79.
      *
@@ -42,7 +42,7 @@ public class ProcessStudentInfo {
         String tag = "id";
 
         //Declare a Map with List<String> into it.
-        Map<String, List<Student>> list = new LinkedHashMap<String, List<Student>>();
+        Map<String, List<Student>> studentMap = new LinkedHashMap<String, List<Student>>();
 				
         /*
         Declare 2 ArrayList, accepting Student datatype, which you will use to store students from the Selenium class
@@ -58,19 +58,28 @@ public class ProcessStudentInfo {
         seleniumStudents = xmlReader.parseData(tag, pathSelenium);
 
         // Parse Data using parseData method and then store data into QTP ArrayList.
+        qtpStudents = xmlReader.parseData(tag, pathQtp);
 
         // Add Selenium ArrayList data into map.
+        studentMap.put("SeleniumStudents", seleniumStudents);
 
         // Add Qtp ArrayList data into map.
+        studentMap.put("QTPStudents", qtpStudents);
 
         // Retrieve map data and display output for both maps.
-
-
-
-        List<Student> stList = new ArrayList<>();
-        for (Student st : stList) {
-            System.out.println(st.getFirstName() + " " + st.getLastName() + " " + st.getScore() + " " + st.getId());
+        for (List<Student> student : studentMap.values()) {
+            for (Student s : student) {
+                System.out.println(s.id);
+                System.out.println(s.firstName);
+                System.out.println(s.lastName);
+                System.out.println(s.score);
+            }
         }
+
+//        List<Student> stList = new ArrayList<>();
+//        for (Student st : stList) {
+//            System.out.println(st.getFirstName() + " " + st.getLastName() + " " + st.getScore() + " " + st.getId());
+//        }
 
     }
 

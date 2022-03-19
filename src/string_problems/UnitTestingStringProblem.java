@@ -1,4 +1,4 @@
-package string.problems;
+package string_problems;
 
 public class UnitTestingStringProblem {
 
