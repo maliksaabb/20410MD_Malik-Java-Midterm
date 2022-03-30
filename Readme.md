@@ -1,25 +1,27 @@
-## MidtermNovember2020
+## Winter Weekend 2022 Java Midterm
 
 
-### Submission Process :
-- Hard Deadline: 11th November EOD.
-- Download the zip of the project --> unzip and open using Intellij --> File --> New --> Project Using Existing Source --> 
-Select the downloaded (unzipped) project's directory --> Create Project From Existing Source
-- Make sure to add all required dependencies into your IntelliJ Library
-- Create your own repository in GitHub and verify your local repo is pointing to your newly created remote repo by 
-using `git remote -v` (if not, change using git remote set-url <existing remote name> <new repo URL>) 
-- Make sure you are pushing your code every time you solve a problem or finish a task.
-- IMPORTANT: DO NOT PUSH ANY CODE CONTAINING ANY ERRORS.
+### SUBMISSION PROCESS :
+- Deadline: April 10th @ 10AM
+- Clone the project locally
+- Add all required dependencies to the project
+  - JDBC
+  - Apache POI
+- Create your own public repository in GitHub and name it: "<StudentID_FirstName> Java Midterm"
 - Once you create your GitHub repo, [click here to add your repo URL](https://docs.google.com/spreadsheets/d/1xa0xRvQs5ySBNhmv-eof2sYbQaxiShjqP41vdfwheio/edit?usp=sharing)
+- Point your local repo to your newly created remote repo and verify it is pointing to the correct repo (`git remote -v`) 
+  - If not, change which remote repo your local is pointing to by using the following command: `git remote set-url <existing remote name> <new repo URL>`
+- You must be pushing code to the repo on a consistent basis
+  - Best practice (in real life), is to push your code every time you solve a problem, make a change, or finish a task.
+  - ***IMPORTANT: DO NOT PUSH ANY CODE CONTAINING ANY ERRORS***
 
-### IMPORTANT NOTES:
+### IMPORTANT NOTES :
 - Must complete all coding problems.
-- Read the questions thoroughly and understand what is being asked of you. There are files/code for you to explore/learn from. 
-Try to understand things, and how everything is working.
+- Read the questions thoroughly and understand what is being asked of you. There are files in the project that are there for you to review. 
+  - Try to understand how everything is working.
 - Google should be used to learn, however, don't feel free to copy and paste answers. You only hurt yourself if you copy and don't try
-to understand the solution.
-- Once submissions are in, we will be reviewing the midterm together. I will be randomly calling on individuals to present their
-solutions.
+to understand the solution
+- Once submissions are in, we will be reviewing the midterm in class together.
 
 
-#### ***ENJOY THE PROCESS***
+#### ***ENJOY THE PROCESS & GOOD LUCK!***
