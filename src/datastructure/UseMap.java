@@ -1,12 +1,13 @@
 package datastructure;
 
-import databases.ConnectToSqlDB;
+import databases.SharedStepsDatabase;
 
 import java.util.HashMap;
+import java.util.List;
 
 public class UseMap {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         /*
          * Demonstrate how to use Map that includes storing and retrieving elements.
          * Add List<String> into a Map. Like, Map<String, List<string>> list = new HashMap<String, List<String>>();
@@ -15,33 +16,29 @@ public class UseMap {
          * Store and retrieve data from/to a database table.
          */
 
-        HashMap<Object, Object> h = new HashMap<>();
+        HashMap<Object, Object> map = new HashMap<>();
 
-        h.put(8454, "lamia");
-        h.put(4567, "azar");
-        h.put(7898, "rahim");
-
-//        System.out.println(h.get(8454));
-//
-//        System.out.println(h);
-//
-//        System.out.println();
-//
-//        System.out.println(h.keySet());
+        map.put(8454, "lamia");
+        map.put(4567, "azar");
+        map.put(7898, "rahim");
 
         // "Keys"  +  "Values"
 
-//        for (Object k : h.keySet()){
-//            System.out.print("KEY: " + k + "\t");
-//            System.out.print("VALUE: " + h.get(k));
-//            System.out.println();
-//        }
+        for (Object key : map.keySet()){
+            System.out.print("KEY: " + key + "\t");
+            System.out.print("VALUE: " + map.get(key));
+            System.out.println();
+        }
 
-        ConnectToSqlDB sql = new ConnectToSqlDB();
+        String tableName = "`test_hash_map`";
+        SharedStepsDatabase sql = new SharedStepsDatabase();
+        sql.insertFromMap(tableName, map);
 
-        String tableName = "`test_schema_1`.`test_hash_map`";
-        sql.insertDataFromHashMapToSqlTable(h, tableName);
+        List<String> result = sql.executeQueryReadAllSingleColumn("SELECT * FROM TEST_HASH_MAP", "", 1);
 
+        for (String r : result) {
+            System.out.println(r);
+        }
     }
 
 }

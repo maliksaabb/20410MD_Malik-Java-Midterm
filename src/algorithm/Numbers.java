@@ -1,13 +1,9 @@
 package algorithm;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.sql.SQLException;
 import java.util.List;
 import java.util.Random;
 
-import databases.ConnectToSqlDB;
+import databases.SharedStepsDatabase;
 
 public class Numbers {
 
@@ -23,9 +19,9 @@ public class Numbers {
 
     public static void main(String[] args) throws Exception {
 
-        ConnectToSqlDB connectToSqlDB = new ConnectToSqlDB();
+        SharedStepsDatabase ssdb = new SharedStepsDatabase();
 
-        int[] num = new int[1000000];
+        int[] num = new int[100];
         storeRandomNumbers(num);
 
         // Selection Sort
@@ -35,18 +31,21 @@ public class Numbers {
         System.out.println("Total Execution Time of " + num.length + " numbers in Selection Sort took: "
                 + selectionSortExecutionTime + " milliseconds");
 
-        connectToSqlDB.insertDataFromArrayToSqlTable(num, "selection_sort", "SortingNumbers");
-        List<String> numbers = connectToSqlDB.readDataBase("selection_sort", "SortingNumbers");
+        ssdb.insertIntegerArray(num, "selection_sort", "sorted_numbers");
+        String query = "SELECT * FROM SELECTION_SORT";
+        SharedStepsDatabase.resultSet = ssdb.executeQuery(query);
+        List<String> numbers = ssdb.readAllSingleColumn("sorted_numbers", 1);
+
         printValue(numbers);
 
         int n = num.length;
         randomize(num, n);
 
         // Insertion Sort
-        algo.insertionSort(num);
-        long insertionSortExecutionTime = algo.executionTime;
-        System.out.println("Total Execution Time of " + num.length + " numbers in Insertion Sort took: "
-                + insertionSortExecutionTime + " milliseconds");
+//        algo.insertionSort(num);
+//        long insertionSortExecutionTime = algo.executionTime;
+//        System.out.println("Total Execution Time of " + num.length + " numbers in Insertion Sort took: "
+//                + insertionSortExecutionTime + " milliseconds");
 
         /*
          By following the same convention we used for Selection Sort, continue to do the same for all remaining sorting

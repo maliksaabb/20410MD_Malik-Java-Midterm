@@ -2,12 +2,11 @@ package string_problems;
 
 public class Permutation {
 
-    public static void main(String[] args) {
+    /*
+    Create a Java program to compute all permutations of any given string
 
-        /*
-        Permutation of string "ABC" = "ABC" "ACB" "BAC" "BCA" "CAB" "CBA"
+        e.g. -  "ABC" = "ABC" "ACB" "BAC" "BCA" "CAB" "CBA"
+     */
 
-        Create a Java program to compute all permutations of any given string
-         */
-    }
+    // Implement Here
 }
