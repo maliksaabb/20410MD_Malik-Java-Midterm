@@ -1,4 +1,4 @@
-package design;
+package company_app_design;
 
 public class FortuneEmployee {
 
@@ -11,7 +11,7 @@ public class FortuneEmployee {
         This application should provide basic employee information services
      </p>
      <p>
-     Use any databases[MongoDB, Oracle, MySql] to store data and retrieve data.
+     Use any databases[MongoDB, Oracle, MySql] to store data_structures.data and retrieve data_structures.data.
      </p>
      **/
     public static void main(String[] args) {

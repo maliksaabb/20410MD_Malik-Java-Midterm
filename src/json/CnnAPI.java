@@ -1,4 +1,4 @@
-package json.parser;
+package json;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -19,7 +19,7 @@ public class CnnAPI {
       You can get API_KEY from this below link. Once you have the API_KEY, you can fetch the top-headlines news.
       https://newsapi.org/s/cnn-api
 
-      Fetch This following CNN API, It will return some news in Json data. Parse this data and construct
+      Fetch This following CNN API, It will return some news in Json data_structures.data. Parse this data_structures.data and construct
       https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=YOUR_API_KEY
 
       MY_API_KEY=6e93a87b2b594eb99b16b1e4683324a9
@@ -56,7 +56,7 @@ public class CnnAPI {
         String apiKey = "6e93a87b2b594eb99b16b1e4683324a9";
         String URL = "https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=" + apiKey;
 
-//        JsonObject rootObject = new Json(new String(Files.readAllBytes(new File("src/json/parser/data.json").toPath())));
+//        JsonObject rootObject = new Json(new String(Files.readAllBytes(new File("src/json/parser/data_structures.data.json").toPath())));
 
         NewsDataClass news = null;
         List<NewsDataClass> list1 = new ArrayList<>();

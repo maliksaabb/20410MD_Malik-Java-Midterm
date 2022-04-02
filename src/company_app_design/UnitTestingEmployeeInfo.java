@@ -1,4 +1,4 @@
-package design;
+package company_app_design;
 
 public class UnitTestingEmployeeInfo {
 

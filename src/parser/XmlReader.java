@@ -15,7 +15,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-// This XmlReader class are using DOM parser to read data from XML.
+// This XmlReader class are using DOM parser to read data_structures.data from XML.
 
 public class XmlReader {
 

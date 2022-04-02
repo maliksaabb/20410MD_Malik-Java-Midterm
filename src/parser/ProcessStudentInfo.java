@@ -18,8 +18,8 @@ public class ProcessStudentInfo {
      * You need to implement the method name "convertIntToChar()" which will convert String score into char Grade.('A'for 90 to 100,'B'for 80 to 89 and
      * 'C' for 70 to 79.
      *
-     * Here in the main method fill in the code that outlined to read xml data parsed into 2 separate ArrayList, then store into map.
-     * Once map has all data, retrieve those data and out put to console.
+     * Here in the main method fill in the code that outlined to read xml data_structures.data parsed into 2 separate ArrayList, then store into map.
+     * Once map has all data_structures.data, retrieve those data_structures.data and out put to console.
      *
      * Do any necessary steps that require for below successful output.
      * ......................................................
@@ -31,12 +31,12 @@ public class ProcessStudentInfo {
      * ......................................................
      *
      *
-     * Use any databases[MongoDB, Oracle or MySql] to store data and to retrieve data.
+     * Use any databases[MongoDB, Oracle or MySql] to store data_structures.data and to retrieve data_structures.data.
      *
      */
 
     public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
-        // Path of XML data to be read.
+        // Path of XML data_structures.data to be read.
         String pathSelenium = System.getProperty("user.dir") + "/src/parser/selenium.xml";
         String pathQtp = System.getProperty("user.dir") + "/src/parser/qtp.xml";
         String tag = "id";
@@ -54,19 +54,19 @@ public class ProcessStudentInfo {
         // Create XMLReader object.
         XmlReader xmlReader = new XmlReader();
 
-        // Parse Data using parseData method and then store data into Selenium ArrayList.
+        // Parse Data using parseData method and then store data_structures.data into Selenium ArrayList.
         seleniumStudents = xmlReader.parseData(tag, pathSelenium);
 
-        // Parse Data using parseData method and then store data into QTP ArrayList.
+        // Parse Data using parseData method and then store data_structures.data into QTP ArrayList.
         qtpStudents = xmlReader.parseData(tag, pathQtp);
 
-        // Add Selenium ArrayList data into map.
+        // Add Selenium ArrayList data_structures.data into map.
         studentMap.put("SeleniumStudents", seleniumStudents);
 
-        // Add Qtp ArrayList data into map.
+        // Add Qtp ArrayList data_structures.data into map.
         studentMap.put("QTPStudents", qtpStudents);
 
-        // Retrieve map data and display output for both maps.
+        // Retrieve map data_structures.data and display output for both maps.
         for (List<Student> student : studentMap.values()) {
             for (Student s : student) {
                 System.out.println(s.id);

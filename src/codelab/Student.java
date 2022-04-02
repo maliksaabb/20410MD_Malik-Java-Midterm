@@ -1,15 +1,15 @@
-package codelab.status;
+package codelab;
 
-public class Trainee implements Comparable<Trainee> {
+public class Student implements Comparable<Student> {
 
     private String firstName;
     private String lastName;
     private int numberOfExercisesSolved;
 
-    public Trainee() {
+    public Student() {
     }
 
-    public Trainee(String firstName, String lastName, int numberOfExercisesSolved) {
+    public Student(String firstName, String lastName, int numberOfExercisesSolved) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.numberOfExercisesSolved = numberOfExercisesSolved;
@@ -39,8 +39,8 @@ public class Trainee implements Comparable<Trainee> {
         this.numberOfExercisesSolved = numberOfExercisesSolved;
     }
 
-    public int compareTo(Trainee trainee) {
-        return trainee.getNumberOfExercisesSolved() - this.getNumberOfExercisesSolved();
+    public int compareTo(Student student) {
+        return student.getNumberOfExercisesSolved() - this.getNumberOfExercisesSolved();
     }
 
 }

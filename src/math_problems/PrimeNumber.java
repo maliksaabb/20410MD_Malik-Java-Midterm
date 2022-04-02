@@ -2,14 +2,15 @@ package math_problems;
 
 public class PrimeNumber {
 
-    public static void main(String[] args) {
-        /*
-        Write a method to print the list of prime numbers from 2 to 1,000,000
-            Solving the problem should be your first priority, however bonus points if you can figure out how to
-            improve algorithmic efficiency
+    /**
+     * Write a method to print a list of all prime numbers from 2 to 1,000,000.
+     *  Print out the prime numbers in the given range.
+     *
+     * BONUS: Figure out how to improve algorithmic efficiency
+     */
 
-         Print out the prime numbers in the given range.
-         */
+
+    public static void main(String[] args) {
 
     }
 

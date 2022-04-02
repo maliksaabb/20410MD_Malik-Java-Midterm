@@ -76,20 +76,6 @@ public class SharedStepsDatabase {
 //        for (User user : list) {
 //            System.out.println(user.getStName() + " " + user.getStID() + " " + user.getStDOB());
 //        }
-
-        // region readAllTest
-//        SharedStepsDatabase ssdb = new SharedStepsDatabase();
-//        String query = "SELECT * FROM EMPLOYEES.EMPLOYEES E INNER JOIN DEPT_EMP DE ON E.EMP_NO = DE.EMP_NO WHERE E.FIRST_NAME LIKE 'Alain'";
-//        resultSet = ssdb.executeQuery(query);
-//        List<List<String>> data = ssdb.readAll();
-//
-//        for (List<String> row : data) {
-//            for (String cell : row) {
-//                System.out.print(cell + "\t\t\t\t");
-//            }
-//            System.out.println();
-//        }
-        // endregion
     }
 
     private static Properties loadProperties() throws IOException {
@@ -100,67 +86,75 @@ public class SharedStepsDatabase {
         return prop;
     }
 
-    public List<String> executeQueryReadAllSingleColumn(String query, String column, int colIndex) throws Exception {
+    /**
+     * @throws SQLException
+     *
+     * Executes a query, reads & parses the entire resultSet and returns a List containing each row of data_structures.data as a list.
+     * (The inner lists represent each row of data_structures.data)
+     *
+     * @return Entire result set as a List<List<String>>
+     */
+    public List<List<String>> executeQueryReadAll(String query) throws SQLException {
         resultSet = executeQuery(query);
-        return readAllSingleColumn(column, colIndex);
-    }
+        ResultSetMetaData metaData = resultSet.getMetaData();
+        int columnCount = metaData.getColumnCount();
 
-    public List<List<String>> executeQueryReadAll(String query) throws Exception {
-        resultSet = executeQuery(query);
-        return readAll();
-    }
-
-    public ResultSet executeQuery(String query) {
-        try {
-            statement = connect.createStatement();
-            resultSet = statement.executeQuery(query);
-        } catch (SQLException sql) {
-            System.out.println("UNABLE TO RETRIEVE RESULTS FROM QUERY: " + query);
-            System.out.println(sql.getMessage());
+        List<List<String>> data = new ArrayList<>();
+        while (resultSet.next()) {
+            List<String> row = new ArrayList<>();
+            for (int i = 1; i <= columnCount; i++) {
+                row.add(resultSet.getString(i));
+            }
+            data.add(row);
         }
-
-        return resultSet;
+        return data;
     }
 
-    public List<String> readAllSingleColumn(String columnName, int colIndex) throws SQLException {
-        List<String> dataList = new ArrayList<String>();
+    /**
+     * @throws SQLException
+     *
+     * Executes a query, reads & parses the resultSet specified by column name and returns a List containing each cell
+     * value in that column
+     *
+     * @param query The query to be executed
+     * @param columnName Identifies the column to read data_structures.data from
+     * @return All cell values within the specified column, resulting from the query's execution
+     */
+    public List<String> executeQueryReadAllSingleColumn(String query, String columnName) throws SQLException {
+        resultSet = executeQuery(query);
+        List<String> dataList = new ArrayList<>();
         String item;
 
         while (resultSet.next()) {
-
-            if (columnName.equals("")) {
-                item = resultSet.getString(colIndex);
-            } else {
-                item = resultSet.getString(columnName);
-            }
+            item = resultSet.getString(columnName);
             dataList.add(item);
         }
         return dataList;
     }
 
     /**
-     * Reads & parses an entire resultSet and returns a List containing Lists.
-     * The inner lists represent each row of data
-     * @return Entire result set as a List<List<String>>
      * @throws SQLException
+     *
+     * Executes a query, reads & parses the resultSet specified by column number and returns a List containing each cell
+     * value in that column.
+     *
+     * Database columns start at 1
+     *
+     * @param query The query to be executed
+     * @param columnNumber Identifies the column to read data_structures.data from (e.g. - 1 = first column, 2 = second column...)
+     * @return All cell values within the specified column, resulting from the query's execution
      */
-    public List<List<String>> readAll() throws SQLException {
-
-        List<List<String>> data = new ArrayList<List<String>>();
-
-        ResultSetMetaData metaData = resultSet.getMetaData();
-        int columnCount = metaData.getColumnCount();
-        List<String> tempRow = new ArrayList<>();
+    public List<String> executeQueryReadAllSingleColumn(String query, int columnNumber) throws Exception {
+        resultSet = executeQuery(query);
+        List<String> dataList = new ArrayList<>();
+        String item;
 
         while (resultSet.next()) {
-            List<String> row = new ArrayList<>();
-            for (int i = 1; i <= columnCount; i++) {
-                row.add(resultSet.getString(i));
-            }
-
-            data.add(row);
+            item = resultSet.getString(columnNumber);
+            dataList.add(item);
         }
-        return data;
+        return dataList;
+
     }
 
     public static List<User> getStudentList(){
@@ -281,6 +275,18 @@ public class SharedStepsDatabase {
             e.printStackTrace();
         }
 
+    }
+
+    private ResultSet executeQuery(String query) {
+        try {
+            statement = connect.createStatement();
+            resultSet = statement.executeQuery(query);
+        } catch (SQLException sql) {
+            System.out.println("UNABLE TO RETRIEVE RESULTS FROM QUERY: " + query);
+            System.out.println(sql.getMessage());
+        }
+
+        return resultSet;
     }
 
     private static void closeResources() {
