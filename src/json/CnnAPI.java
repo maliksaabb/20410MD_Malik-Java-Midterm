@@ -15,111 +15,106 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CnnAPI {
-    /*
-      You can get API_KEY from this below link. Once you have the API_KEY, you can fetch the top-headlines news.
-      https://newsapi.org/s/cnn-api
-
-      Fetch This following CNN API, It will return some news in Json data_structures.data. Parse this data_structures.data and construct
-      https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=YOUR_API_KEY
-
-      MY_API_KEY=6e93a87b2b594eb99b16b1e4683324a9
-
-      After getting Json Format of the news, You can go to json validator link: https://jsonlint.com/ to see
-      how it can be parsed.
-
-      "articles": [{
-		"source": {
-			"id": "cnn",
-			"name": "CNN"
-		},
-		"author": null,
-		"title": "Who is affected by a shutdown? - CNN Video",
-		"description": "CNN's Tom Foreman breaks down who is affected by a federal government partial shutdown.",
-		"url": "http://us.cnn.com/videos/politics/2018/12/22/federal-partial-shutdown-by-the-numbers-foreman-ctn-vpx.cnn",
-		"urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/181202171029-government-shutdown-capitol-file-super-tease.jpg",
-		"publishedAt": "2018-12-23T01:09:50.8583193Z",
-		"content": "Chat with us in Facebook Messenger. Find out what's happening in the world as it unfolds."
-	   },{}]
-
-	   Read the articles array and construct Headline news as source, author, title,description,url,urlToImage,publishedAt
-	   and content. You need to design News Data Model and construct headline news.
-	   You can store in Map and then into ArrayList as your choice of Data Structure.
-
-	   You can follow How we implemented in Employee and JsonReaderUtil task.
-
-	   Show output of all the headline news in to console.
-	   Store into choice of your database and retrieve.
-
+    /** INSTRUCTIONS
+     * Go to this URL: https://newsapi.org/s/cnn-api
+     *
+     * Get your API Key from this website. Once you have your key, you can append your key to the end of the URL, as
+     * shown below.
+     *
+     *  https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=YOUR_API_KEY
+     *
+     * When you navigate to that full URL, you will be submitting a request, and the response should be CNN's
+     * top headline news.
+     *
+     * After retrieving the JSON response, you can go to the following link to validate that it is, in fact, valid JSON:
+     *  https://jsonlint.com/
+     *
+     *      "articles": [{
+     * 		"source": {
+     * 			"id": "cnn",
+     * 			"name": "CNN"
+     *                },
+     * 		"author": null,
+     * 		"title": "Who is affected by a shutdown? - CNN Video",
+     * 		"description": "CNN's Tom Foreman breaks down who is affected by a federal government partial shutdown.",
+     * 		"url": "http://us.cnn.com/videos/politics/2018/12/22/federal-partial-shutdown-by-the-numbers-foreman-ctn-vpx.cnn",
+     * 		"urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/181202171029-government-shutdown-capitol-file-super-tease.jpg",
+     * 		"publishedAt": "2018-12-23T01:09:50.8583193Z",
+     * 		"content": "Chat with us in Facebook Messenger. Find out what's happening in the world as it unfolds."
+     *       },{}]
+     *
+     * Follow along in the code implemented below to understand what is going on. You must implement the rest of the
+     * code in the for loop. Your goal is to create a new object of the inner class for each headline your JSON response
+     * contains. You will assign the values that are being retrieved by the JSON parser, to the object attributes. Then,
+     * store each of those objects in the provided List<NewsData>
+     *
+     * You can also choose to store these instances in a Map, instead.
+     *
+     * Lastly, store the data that is in your data structure into a database table, called `news_headlines`, and then
+     * demonstrate that you can read from the table and print all the results to the console
+     *
+     * Feel free to use the JsonReaderUtil for reference.
+     *
      */
 
     public static void main(String[] args) throws IOException, JSONException {
-        String apiKey = "6e93a87b2b594eb99b16b1e4683324a9";
-        String URL = "https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=" + apiKey;
+        String apiKey = "";
+        String URL = "";
 
-//        JsonObject rootObject = new Json(new String(Files.readAllBytes(new File("src/json/parser/data_structures.data.json").toPath())));
-
-        NewsDataClass news = null;
-        List<NewsDataClass> list1 = new ArrayList<>();
+        NewsData news = null;
+        List<NewsData> newsDataList = new ArrayList<>();
         java.net.URL url1 = new URL(URL);
         URLConnection request = url1.openConnection();//establish the connection with  the server
         request.connect();
+
         JsonArray jsonArray = null;
         JsonObject rootObj = null;
         JsonParser jp = new JsonParser();
+
         JsonElement root = jp.parse(new InputStreamReader((InputStream) request.getContent()));
+
         if (root instanceof JsonObject) {
             rootObj = root.getAsJsonObject();
         } else if (root instanceof JsonArray) {
             jsonArray = root.getAsJsonArray();
         }
-        if (jsonArray == null)
-            jsonArray = rootObj.getAsJsonArray("articles");//Storing J object in the Array
 
-        //Initialize Fields
-        String source = null;
-        String author = null;
-        String title = null;
-        String description = null;
-        String url = null;
-        String urlToImage = null;
+        // If response is not a JSON array, then convert the response into a JSON array
+        if (jsonArray == null)
+            jsonArray = rootObj.getAsJsonArray("articles");
+
+        String source;
+        String author;
+        String title;
+        String description;
+        String url;
+        String urlToImage;
         String publishedAt;
         String content;
+
         for (int i = 0; i < jsonArray.size() - 1; i++) {
 
             try {
                 JsonObject jsonobject = jsonArray.get(i).getAsJsonObject();
-                source = jsonobject.get("source").toString();
-                System.out.println("SOURCE: " + source);
-                author = jsonobject.get("author").toString();
-                System.out.println("AUTHOR: " + author);
+
                 title = jsonobject.get("title").toString();
                 System.out.println("TITLE: " + title);
-                description = jsonobject.get("description").toString();
-                System.out.println("DESCRIPTION: " + description);
-                url = jsonobject.get("url").toString();
-                System.out.println("URL: " + url);
-                urlToImage = jsonobject.get("urlToImage").toString();
-                System.out.println("URL2I: " + urlToImage);
-                publishedAt = jsonobject.get("publishedAt").toString();
-                System.out.println("PUB AT: " + publishedAt);
-                content = jsonobject.get("content").toString();
-                System.out.println("CONTENT: " + content);
 
-                //Object of HeadlineNews
-                news = new NewsDataClass(source, author, title, description, url, urlToImage, publishedAt, content);
-                list1.add(news);
-
+                // Implement the remaining code, using the provided example within this try block
 
             } catch (Exception ex) {
 
             }
         }
-
     }
 
-    //using Inner Class
-    private static class NewsDataClass {
-        public NewsDataClass(String source, String author, String title, String description, String url, String urlToImage, String publishedAt, String content) {
+    // Inner Class
+    private static class NewsData {
+
+        public NewsData(String source, String author, String title, String description, String url, String urlToImage,
+                        String publishedAt, String content) {
+
+
         }
     }
 

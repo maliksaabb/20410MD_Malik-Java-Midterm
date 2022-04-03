@@ -1,4 +1,4 @@
-package parser;
+package xml;
 
 public class UnitTestingStudentProfile {
 

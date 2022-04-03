@@ -1,4 +1,4 @@
-***ANSWER ALL QUESTIONS BELOW***
+***ANSWER ALL OF THE QUESTIONS BELOW***
 
 What is a programming language?
 Answer:
@@ -21,10 +21,10 @@ Answer:
 What is an object?
 Answer:
 
-What is the entry point of an application?
+What is the entry point of a Java project?
 Answer:
 
-Why is the main() static?
+Why is the main() method static?
 Answer:
 
 Which class is the superclass of all classes?
@@ -54,7 +54,7 @@ Answer:
 Does java support multiple inheritance? Why or why not?
 Answer:
 
-What is method overloading and when does it happen?
+What is method overloading? List all of the different ways to overload.
 Answer:
 
 Explain exceptions in java and how to handle them.

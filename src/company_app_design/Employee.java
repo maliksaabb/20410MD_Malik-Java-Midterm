@@ -2,30 +2,25 @@ package company_app_design;
 
 public interface Employee {
 	
-	/*
-	Employee is an Interface which contains multiple unimplemented methods.
-	A few methods have been declared below. You need to come up with more methods to meet business requirements of this
-	    application
-	*/
+	/** INSTRUCTIONS
+     * Employee is an Interface which contains multiple unimplemented methods.
+     *
+     * Read the methods and understand what they might be used for. What could be the requirements behind creating such
+     * methods? Think about it, and then implement them in a concrete class.
+     *
+     * You also need to add some additional methods to meet any additional business requirements of this application
+     *
+     * Get creative - think like a dev
+	 */
 
-    /*
-     Please read the following methods and understand the business requirements of these following methods
-        and then implement these in a concrete class.
-     */
-
-    // employeeId() will return employee id.
     int employeeId();
 
-    //employeeName() will return employee name
     String employeeName();
 
-    //assignDepartment() will assign employee to departments
     void assignDepartment();
 
-    //calculate employee salary
     int calculateSalary();
 
-    //employee benefit
-    void benefitLayout();
+    void benefits();
 
 }

@@ -1,12 +1,12 @@
-***ANSWER ALL QUESTIONS BELOW***
+***ANSWER ALL OF THE QUESTIONS BELOW***
 
-Why do we need data_structures.data structure?
+Why do we need data structure?
 Answer:
 
-What are the various operations that can be performed on different data_structures.data structures?
+What are the various operations that can be performed on different data structures?
 Answer:
 
-When would we use data_structures.data structures in the real world?
+When would we use data structures in the real world?
 Answer:
 
 What is an Array?
@@ -24,7 +24,7 @@ Answer:
 What is a Queue?
 Answer:
 
-What is a Stack (not Java memory - refers to data_structures.data structure)?
+What is a Stack (referring to data structures)?
 Answer:
 
 What is FIFO and LIFO?
@@ -39,16 +39,13 @@ Answer:
 What is the worst case to search an element from an array?
 Answer:
 
-Describe what a tree data_structures.data structure is?
+Describe what a tree data structure is?
 Answer:
 
-Describe what a graph data_structures.data structure is?
+Describe what a graph data structure is?
 Answer:
 
 What is the difference between the HashTable and HashMap?
-Answer:
-
-What are the major data_structures.data structures used in the following areas : RDBMS, Network data_structures.data model and Hierarchical data_structures.data model
 Answer:
 
 How do HashMaps work in Java? How do they store values, and when are they useful?
@@ -66,15 +63,9 @@ Answer:
 What is Recursion?
 Answer:
 
-What are linear and non-linear data_structures.data Structures?
+What are linear and non-linear data Structures?
 Answer:
 
 
 Outline different sorting algorithms and their time complexities:
 
-
-Draw a table with time complexity in which it will summarize all the data_structures.data structure feature's advantages and disadvantages.
-  a) In terms of Accessing elements:
-  b) In terms of Inserting elements:
-  c) In terms of Searching elements:
-  d) In terms of Removing elements:

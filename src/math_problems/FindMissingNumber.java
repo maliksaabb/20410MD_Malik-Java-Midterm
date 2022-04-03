@@ -2,7 +2,7 @@ package math_problems;
 
 public class FindMissingNumber {
 
-    /**
+    /** INSTRUCTIONS
      * Write a method to find the missing number from the array.
      */
 

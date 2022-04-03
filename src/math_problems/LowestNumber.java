@@ -2,7 +2,7 @@ package math_problems;
 
 public class LowestNumber {
 
-    /**
+    /** INSTRUCTIONS
      * Write a method to find the lowest number from this array.
      */
 

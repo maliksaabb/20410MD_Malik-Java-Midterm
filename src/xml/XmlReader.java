@@ -1,4 +1,4 @@
-package parser;
+package xml;
 
 import java.io.File;
 import java.io.IOException;
@@ -15,7 +15,12 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-// This XmlReader class are using DOM parser to read data_structures.data from XML.
+/** INSTRUCTIONS
+ * This XML Reader class is used to parse the XML documents contained within this package. You must also implement the
+ * given method at the bottom of the class.
+ *
+ * If you don't know what XML is... Look it up! You can expect to see a lot of XML very soon
+ */
 
 public class XmlReader {
 
@@ -24,20 +29,30 @@ public class XmlReader {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
         File file = new File(path);
+
         Document doc = builder.parse(file);
         NodeList nodeList = doc.getDocumentElement().getChildNodes();
+
         List<Student> list = new ArrayList<>();
+        Student student;
+        Node node;
+        Node cNode;
+        NodeList childNodes;
+        String content;
+        String data;
+
         for (int i = 0; i < nodeList.getLength(); i++) {
-            Node node = nodeList.item(i);
+            node = nodeList.item(i);
             if (node instanceof Element) {
-                Student student = new Student();
+                student = new Student();
                 student.id = node.getAttributes().getNamedItem(tagName).getNodeValue();
-                NodeList childNodes = node.getChildNodes();
+                childNodes = node.getChildNodes();
+
                 for (int j = 0; j < childNodes.getLength(); j++) {
-                    Node cNode = childNodes.item(j);
+                    cNode = childNodes.item(j);
                     if (cNode instanceof Element) {
-                        String content = cNode.getLastChild().getTextContent().trim();
-                        String data = cNode.getNodeName();
+                        content = cNode.getLastChild().getTextContent().trim();
+                        data = cNode.getNodeName();
                         switch (data) {
                             case "firstName":
                                 student.firstName = content;
@@ -53,14 +68,13 @@ public class XmlReader {
                 }
                 list.add(student);
             }
-
         }
         return list;
     }
 
-    //This convert method need to be implemented.
-    public String convertIntToChar(String score) {
-        String grade = "";
+    // You must implement this method
+    public char convertIntToChar(String score) {
+        char grade = ' ';
 
         return grade;
     }

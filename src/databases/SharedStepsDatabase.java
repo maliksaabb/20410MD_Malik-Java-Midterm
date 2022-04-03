@@ -24,29 +24,11 @@ public class SharedStepsDatabase {
 
     public SharedStepsDatabase() {
         Properties prop = null;
-        FileInputStream fis = null;
 
         try {
             prop = loadProperties();
         } catch (IOException ioException) {
             ioException.printStackTrace();
-        }
-
-        try {
-            fis = new FileInputStream(file);
-            if (prop != null) {
-                prop.load(fis);
-            }
-        } catch (IOException ioException) {
-            ioException.printStackTrace();
-        } finally {
-            try {
-                if (fis != null) {
-                    fis.close();
-                }
-            } catch (IOException io) {
-                io.printStackTrace();
-            }
         }
 
         if (prop != null) {
@@ -70,14 +52,6 @@ public class SharedStepsDatabase {
         }
     }
 
-    public static void main(String[] args) throws Exception {
-//        List<User> list = readUserProfileFromSqlTable();
-//
-//        for (User user : list) {
-//            System.out.println(user.getStName() + " " + user.getStID() + " " + user.getStDOB());
-//        }
-    }
-
     private static Properties loadProperties() throws IOException {
         Properties prop = new Properties();
         InputStream ism = new FileInputStream("src/secret.properties");
@@ -87,10 +61,27 @@ public class SharedStepsDatabase {
     }
 
     /**
+     * Submits and executes a database query and returns the resultSet
+     * @param query The SQL query to be executed
+     * @return The resultSet
+     */
+    private ResultSet executeQuery(String query) {
+        try {
+            statement = connect.createStatement();
+            resultSet = statement.executeQuery(query);
+        } catch (SQLException sql) {
+            System.out.println("UNABLE TO RETRIEVE RESULTS FROM QUERY: " + query);
+            System.out.println(sql.getMessage());
+        }
+
+        return resultSet;
+    }
+
+    /**
      * @throws SQLException
      *
-     * Executes a query, reads & parses the entire resultSet and returns a List containing each row of data_structures.data as a list.
-     * (The inner lists represent each row of data_structures.data)
+     * Executes a query, reads & parses the entire resultSet and returns a List containing each row of data as a list.
+     * (The inner lists represent each row of data)
      *
      * @return Entire result set as a List<List<String>>
      */
@@ -141,7 +132,7 @@ public class SharedStepsDatabase {
      * Database columns start at 1
      *
      * @param query The query to be executed
-     * @param columnNumber Identifies the column to read data_structures.data from (e.g. - 1 = first column, 2 = second column...)
+     * @param columnNumber Identifies the column to read data_structures.data from (e.g. - 1 = 1st column, 2 = 2nd column...)
      * @return All cell values within the specified column, resulting from the query's execution
      */
     public List<String> executeQueryReadAllSingleColumn(String query, int columnNumber) throws Exception {
@@ -154,44 +145,16 @@ public class SharedStepsDatabase {
             dataList.add(item);
         }
         return dataList;
-
     }
 
-    public static List<User> getStudentList(){
-        List<User> list = new ArrayList<>();
-        User user;
-        String query = "SELECT * FROM Students";
-
-        try {
-            // Create the Java statement
-            statement = connect.createStatement();
-
-            // Execute the query, and get a java resultSet
-            resultSet = statement.executeQuery(query);
-
-            // Iterate through the java resultSet object
-            String name;
-            String id;
-            String dob;
-
-            while (resultSet.next()) {
-                name = resultSet.getString("stName");
-                id = resultSet.getString("stID");
-                dob = resultSet.getString("stDOB");
-                //System.out.format("%s, %s\n", name, id);
-                user = new User(name, id, dob);
-                list.add(user);
-            }
-        } catch (Exception e) {
-            System.err.println("Got an exception! ");
-            System.err.println(e.getMessage());
-        } finally {
-            closeResources();
-        }
-        return list;
-    }
-
-    public void insertIntegerArray(int[] array, String tableName, String columnName) {
+    /**
+     * Inserts an int[] array to a database table
+     *
+     * @param tableName Name of the table
+     * @param columnName Name of the column
+     * @param array The array to be inserted
+     */
+    public void insertIntegerArray(String tableName, String columnName, int[] array) {
         try {
             ps = connect.prepareStatement("DROP TABLE IF EXISTS `" + tableName + "`;");
             ps.executeUpdate();
@@ -205,13 +168,18 @@ public class SharedStepsDatabase {
                 ps.setInt(1, array[n]);
                 ps.executeUpdate();
             }
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    // TODO - Refactor for re-usability
+    /**
+     * Inserts a String to a database table
+     *
+     * @param tableName Name of the table
+     * @param columnName Name of the column
+     * @param string The String to be inserted
+     */
     public void insertString(String tableName, String columnName, String string) {
         try {
             ps = connect.prepareStatement("INSERT INTO " + tableName + " ( " + columnName + " ) VALUES(?)");
@@ -222,7 +190,14 @@ public class SharedStepsDatabase {
         }
     }
 
-    public static void insertFromList(String tableName, String columnName, List<Object> list) {
+    /**
+     * Inserts a list to a database table
+     *
+     * @param tableName Name of the table
+     * @param columnName Name of the column
+     * @param list The list to be inserted
+     */
+    public static void insertList(String tableName, String columnName, List<Object> list) {
         try {
             ps = connect.prepareStatement("DROP TABLE IF EXISTS `" + tableName + "`;");
             ps.executeUpdate();
@@ -240,7 +215,13 @@ public class SharedStepsDatabase {
         }
     }
 
-    public void insertFromMap(String tableName, Map<Object, Object> map) {
+    /**
+     * Inserts a map to a database table
+     *
+     * @param tableName Name of the table
+     * @param map The map to be inserted
+     */
+    public void insertMap(String tableName, Map<Object, Object> map) {
         try {
             ps = connect.prepareStatement("DROP TABLE IF EXISTS " + tableName + ";");
             ps.executeUpdate();
@@ -263,31 +244,9 @@ public class SharedStepsDatabase {
         }
     }
 
-    // TODO - Refactor for re-usability
-    public void insertProfileToSqlTable(String tableName, String columnName1, String columnName2) {
-        try {
-            ps = connect.prepareStatement("INSERT INTO " + tableName + " ( " + columnName1 + "," + columnName2 + " ) VALUES(?,?)");
-            ps.setString(1, "Ankita Sing");
-            ps.setInt(2, 3590);
-            ps.executeUpdate();
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    private ResultSet executeQuery(String query) {
-        try {
-            statement = connect.createStatement();
-            resultSet = statement.executeQuery(query);
-        } catch (SQLException sql) {
-            System.out.println("UNABLE TO RETRIEVE RESULTS FROM QUERY: " + query);
-            System.out.println(sql.getMessage());
-        }
-
-        return resultSet;
-    }
+    /**
+     * Closes all static resources
+     */
 
     private static void closeResources() {
         try {

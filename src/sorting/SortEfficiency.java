@@ -5,19 +5,16 @@ import java.util.Random;
 
 import databases.SharedStepsDatabase;
 
-public class SortEfficiency {
-
-
-    /**
+    /** INSTRUCTIONS
      * Demonstrate all the different kind of sorting algorithms from the Sorting class. There is an example provided
      *  below to get you started.
      *
      *  You must store all the sorted arrays into their own database table, and retrieve the values and print them
      *  Display the execution time for each sorting. Example in below.
      *
-     *  You may use any database, such as MongoDB, Oracle MySql, PostgreSQL, etc, to store data_structures.data and retrieve data_structures.data.
+     *  You may use any database, such as MongoDB, Oracle MySql, PostgreSQL, etc, to store data and retrieve data.
      *
-     *  BONUS: Come to a conclusion about which sorting algorithm is the most efficient, given data_structures.data sets with a size of:
+     *  BONUS: Come to a conclusion about which sorting algorithm is the most efficient, given data sets with a size of:
      *         10
      *         100
      *         1000
@@ -25,7 +22,7 @@ public class SortEfficiency {
      *         100000
      */
 
-
+public class SortEfficiency {
 
     public static void main(String[] args) throws Exception {
         // Declare and initialize an array of a desired length with random numbers
@@ -43,7 +40,7 @@ public class SortEfficiency {
                 + selectionSortExecutionTime + " milliseconds");
 
         // Insert sorted array into a database table, with the desired table name and column name
-        ssdb.insertIntegerArray(numberArray, "selection_sort", "sorted_numbers");
+        ssdb.insertIntegerArray("selection_sort", "sorted_numbers", numberArray);
 
         // Retrieve all elements from the newly created table
         String query = "SELECT * FROM SELECTION_SORT";
@@ -64,6 +61,41 @@ public class SortEfficiency {
 
         // endregion
 
+        randomize(numberArray);
+
+        // region Bubble Sort
+
+        // endregion
+
+        randomize(numberArray);
+
+        // region Merge Sort
+
+        // endregion
+
+        randomize(numberArray);
+
+        // region Quick Sort
+
+        // endregion
+
+        randomize(numberArray);
+
+        // region Heap Sort
+
+        // endregion
+
+        randomize(numberArray);
+
+        // region Bucket Sort
+
+        // endregion
+
+        randomize(numberArray);
+
+        // region Shell Sort
+
+        // endregion
     }
 
     // region Helper Methods
