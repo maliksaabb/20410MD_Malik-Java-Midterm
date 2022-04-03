@@ -1,0 +1,71 @@
+***ANSWER ALL OF THE QUESTIONS BELOW***
+
+Why do we need data structure?
+Answer:
+
+What are the various operations that can be performed on different data structures?
+Answer:
+
+When would we use data structures in the real world?
+Answer:
+
+What is an Array?
+Answer:
+
+What is the difference between Array and ArrayList?
+Answer:
+
+What is a LinkedList?
+Answer:
+
+How is an Array different from LinkedList?
+Answer:
+
+What is a Queue?
+Answer:
+
+What is a Stack (referring to data structures)?
+Answer:
+
+What is FIFO and LIFO?
+Answer:
+
+Explain Big O Notation?
+Answer:
+
+What is the best case to search an element from an array?
+Answer:
+
+What is the worst case to search an element from an array?
+Answer:
+
+Describe what a tree data structure is?
+Answer:
+
+Describe what a graph data structure is?
+Answer:
+
+What is the difference between the HashTable and HashMap?
+Answer:
+
+How do HashMaps work in Java? How do they store values, and when are they useful?
+Answer:
+
+What is ArrayIndexOutOfBoundsException in java? When does it occur?
+Answer:
+
+What are the different ways of copying an array into another array?
+Answer:
+
+What is DFS and BFS?
+Answer:
+
+What is Recursion?
+Answer:
+
+What are linear and non-linear data Structures?
+Answer:
+
+
+Outline different sorting algorithms and their time complexities:
+
