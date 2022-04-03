@@ -7,8 +7,10 @@
 - Add all required dependencies to the project (these can be found in the `lib` directory)
 - Create your own public repository in GitHub and name it: "<StudentID_FirstName> Java Midterm"
 - Once you create your GitHub repo, [click here to add your repo URL](https://docs.google.com/spreadsheets/d/1apZkiNY3ctpmyT6SnP2jW85-w41QeYmyraBeudCi4Ao/edit?usp=sharing)
-- Point your local repo to your newly created remote repo and verify it is pointing to the correct repo `git remote -v` 
-  - If not, change which remote repo your local is pointing to by using the following command: `git remote set-url <existing remote name> <new repo URL>`
+- Point your local repo to your newly created remote repo and verify it is pointing to the correct repo 
+`git remote -v` 
+  - If not, change which remote repo your local is pointing to by using the following command: 
+`git remote set-url <existing remote name> <new repo URL>`
 - You must be pushing code to the repo on a consistent basis
   - Best practice (in real life), is to push your code every time you solve a problem, make a change, or finish a task.
   - ***IMPORTANT: DO NOT PUSH ANY CODE CONTAINING ANY ERRORS***
