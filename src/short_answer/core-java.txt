@@ -139,10 +139,12 @@ Answer: JVM is where it's responsible for converting the Bytecode into machine s
 
 
 Explain the difference between compile-time and run-time?
-Answer:
+Answer:  Compile-time is the time at which the source code is converted into an executable code
+         Run time is the time at which the executable code is started running.
+         Both the compile-time and runtime refer to different types of errors.
 
 What is heap?
-Answer:
+Answer: The heap is the area of memory used to store objects
 
 How does Java manage its memory?
 Answer:
