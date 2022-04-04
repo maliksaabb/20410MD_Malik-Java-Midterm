@@ -60,20 +60,34 @@ Answer: HashMap in Java works on hashing principles which is the process of mapp
         The values can be stored in a map by forming a key-value pair. They are useful when performing operations using the key index like updation, deletion etc.
 
 What is ArrayIndexOutOfBoundsException in java? When does it occur?
-Answer:
+Answer: The ArrayIndexOutOfBoundsException occurs whenever we are trying to access any item of an array at an index which is not present in the array.
 
 What are the different ways of copying an array into another array?
-Answer:
+Answer: -Using variable assignment.
+        -Create a new array of the same length and copy each element.
+        -Use the clone method of the array. Clone methods create a new array of the same size.
+        -Use System. arraycopy() method.
 
 What is DFS and BFS?
-Answer:
+Answer: BFS stands for Breadth First Search. DFS stands for Depth First Search. 2. BFS(Breadth First Search) uses Queue data structure for finding the shortest path.
+        DFS(Depth First Search) uses Stack data structure.
 
 What is Recursion?
-Answer:
+Answer: Recursion is the technique of making a function call itself. This technique provides a way to break complicated problems down into simple problems which are easier to solve.
 
 What are linear and non-linear data Structures?
-Answer:
+Answer: Data structure where data elements are arranged sequentially or linearly where each and every element is attached to its previous and next adjacent is called a linear data structure.
+        Data structures where data elements are not arranged sequentially or linearly are called non-linear data structures.
 
 
 Outline different sorting algorithms and their time complexities:
+Answer: Selection Sort	Ω(n^2)	θ(n^2)	O(n^2)
+        Bubble Sort	Ω(n)	θ(n^2)	O(n^2)
+        Insertion Sort	Ω(n)	θ(n^2)	O(n^2)
+        Heap Sort	Ω(n log(n))	θ(n log(n))	O(n log(n))
+        Quick Sort	Ω(n log(n))	θ(n log(n))	O(n^2)
+        Merge Sort	Ω(n log(n))	θ(n log(n))	O(n log(n))
+        Bucket Sort	Ω(n+k)	θ(n+k)	O(n^2)
+        Radix Sort	Ω(nk)	θ(nk)	O(nk)
+        Count Sort	Ω(n+k)	θ(n+k)	O(n+k)
 
