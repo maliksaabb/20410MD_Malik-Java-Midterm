@@ -20,11 +20,6 @@ public class Fibonacci {
         for (int i = 1; i <= maxNumber; ++i)
         {
             System.out.print(previousNumber+" ");
-            /* On each iteration, we are assigning second number
-             * to the first number and assigning the sum of last two
-             * numbers to the second number
-             */
-
 
             int sum = previousNumber + nextNumber;
             previousNumber = nextNumber;
