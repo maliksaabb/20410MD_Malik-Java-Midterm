@@ -112,13 +112,15 @@ Answer: The this keyword refers to the current object in a method or constructor
 
 What is "super" keyword in Java? What are some scenarios we would use it?
 Answer: The super keyword in Java is a reference variable which is used to refer immediate parent class object.
+        It refers to superclass (parent) objects. The most common use of the super keyword is to eliminate the
+        confusion between superclasses and subclasses that have methods with the same name.
 
 
 What does JVM stand for?
 Answer: Java Virtual Machine
 
 Is JVM platform independent?
-Answer:
+Answer: JVM is NOT platform independent.
 
 What version of Java are you using?
 Answer:
