@@ -1,55 +1,63 @@
 ***ANSWER ALL OF THE QUESTIONS BELOW***
 
 Why do we need data structure?
-Answer:
+Answer: Data structure provides a way of organizing, managing, and storing data efficiently.
+        With the help of it the data items can be traversed easily. Data structure provides efficiency, reusability and abstraction.
 
 What are the various operations that can be performed on different data structures?
-Answer:
+Answer: We can perform Insertion, Deletion, Searching, Sorting and Traversing using the data structures.
 
 When would we use data structures in the real world?
-Answer:
+Answer: We use data structures in all types of software development.
 
 What is an Array?
-Answer:
+Answer: An Array is a data structure consisting of a collection of elements, each identified by at least one array index or key.
 
 What is the difference between Array and ArrayList?
-Answer:
+Answer: Array is a fixed length data structure whereas ArrayList is a variable length Collection class.
 
 What is a LinkedList?
-Answer:
+Answer: A linked list is a sequence of data structures, which are connected together via links. Linked List is a sequence of links which contains items.
 
 How is an Array different from LinkedList?
-Answer:
+Answer: An array is a collection of elements of a similar data type. Linked List is an ordered collection of elements of the same type in which each
+        element is connected to the next using pointers.
 
 What is a Queue?
-Answer:
+Answer:  A Queue is a linear structure which follows a particular order in which the operations are performed.
 
 What is a Stack (referring to data structures)?
-Answer:
+Answer: Stack is a linear data structure which follows a particular order in which the operations are performed.
 
 What is FIFO and LIFO?
-Answer:
+Answer: FIFO is an abbreviation for first in, first out. It is a method for handling data structures where the first element is processed first and
+        the newest element is processed last.
+        LIFO is an abbreviation for Last in, first out is same as fist in, last out (FILO). It is a method for handling data structures where the last
+        element is processed first and the first element is processed last.
 
 Explain Big O Notation?
-Answer:
+Answer: Big O Notation is the language we use to describe the complexity of an algorithm.
+        Big-O notation is the language we use for talking about how long an algorithm takes to run (time complexity) or how much memory is used by an algorithm.
 
 What is the best case to search an element from an array?
-Answer:
+Answer: The best case of the unsorted array is O(n)
 
 What is the worst case to search an element from an array?
-Answer:
+Answer: O(n)
 
 Describe what a tree data structure is?
-Answer:
+Answer: A tree is a hierarchical data structure defined as a collection of nodes.
 
 Describe what a graph data structure is?
-Answer:
+Answer: A graph is a common data structure that consists of a finite set of nodes (or vertices) and a set of edges connecting them.
 
 What is the difference between the HashTable and HashMap?
-Answer:
+Answer: One of the major differences between HashMap and Hashtable is that HashMap is non-synchronized whereas Hashtable is synchronized
+        which means Hashtable is thread-safe and can be shared between multiple threads but HashMap can not be shared between multiple threads without proper synchronization.
 
 How do HashMaps work in Java? How do they store values, and when are they useful?
-Answer:
+Answer: HashMap in Java works on hashing principles which is the process of mapping the data to some representative integer value using the concept of hashing algorithms.
+        The values can be stored in a map by forming a key-value pair. They are useful when performing operations using the key index like updation, deletion etc.
 
 What is ArrayIndexOutOfBoundsException in java? When does it occur?
 Answer:
