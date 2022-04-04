@@ -147,22 +147,25 @@ What is heap?
 Answer: The heap is the area of memory used to store objects
 
 How does Java manage its memory?
-Answer:
+Answer: Java manages its memory through STack and Heap.
 
 What is the difference between String, StringBuffer and StringBuilder?
-Answer:
+Answer:A string is an object which represents a sequence of characters and they are immutable in Java.
+        whereas, StringBuffer and StringBuilder are classes used for String manipulation. These are mutable objects.
 
 What is Singleton class?
-Answer:
+Answer: In object-oriented programming, a singleton class is a class that can have only one object (an instance of the class) at a time.
 
 What is Serialization and Deserialization?
-Answer:
+Answer: Serialization is a mechanism of converting the state of an object into a byte stream.
+        Deserialization is the reverse process where the byte stream is used to recreate the actual Java object in memory.
 
-Explain the difference between While and Do..While loops?
-Answer:
+Explain the difference between While and Do-While loops?
+Answer:While loop checks the condition first and then executes the statement,
+       whereas do while loop will execute the statement at least once, then the condition is checked.
 
 What is Enum?
-Answer:
+Answer: A Java Enum is a special Java type used to define collections of constants.
 
 What is Iterator?
 Answer:
