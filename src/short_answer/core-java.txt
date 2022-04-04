@@ -129,10 +129,14 @@ What does JAR stand for?
 Answer: Java ARchive.
 
 What is the difference between JDK and JVM?
-Answer:
+Answer: JDK is a software development kit to develop applications in Java.
+        It is a software bundle which provides Java class libraries with necessary components to run Java code.
+        JVM executes Java byte code and provides an environment for executing it.
 
 What is the difference between JVM and JRE?
-Answer:
+Answer: JVM is where it's responsible for converting the Bytecode into machine specific code and makes java program write-once-run-anywhere.
+        JRE is an environment, in order to execute any Java program locally.
+
 
 Explain the difference between compile-time and run-time?
 Answer:
