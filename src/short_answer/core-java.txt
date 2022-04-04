@@ -1,91 +1,121 @@
 ***ANSWER ALL OF THE QUESTIONS BELOW***
 
 What is a programming language?
-Answer:
+Answer: A programming language is a vocabulary and set of grammatical rules for instructing a computer or computing device
+        to perform specific tasks.
 
 What is a JDK composed of? Define each components?
-Answer:
+Answer:the Java Runtime Environment (JRE), an interpreter/loader (java), a compiler (javac), an archiver (jar),
+       A documentation generator (javadoc) and other tools needed in Java development.
 
 What is an IDE?
-Answer:
+Answer: An integrated development environment (IDE) is a software suite that provides basic tools required to
+        write and test software.
+
 
 What are some of the most popular Java IDEs available in the market?
-Answer:
+Answer: NetBeans,  Eclipse and IntelliJ IDEA
 
 Explain the entire java life cycle.
-Answer:
+Answer: Life cycle of a java program tells us what happens right from the point when we type source code in a
+         text editor to the point that source code is converted into machine code. Stages are Editing the program,
+         Compiling the source code and then Executing it.
 
 What is a class?
-Answer:
+Answer: A class is a user defined blueprint from which objects are created.
 
 What is an object?
-Answer:
+Answer: A Java object is a member (also called an instance) of a Java class.
 
 What is the entry point of a Java project?
-Answer:
+Answer: Java main method is the entry point of any java program.
 
 Why is the main() method static?
-Answer:
+Answer: Java program's main method has to be declared static because keyword static
+        allows main to be called without creating an object of the class in which the main method is defined.
 
 Which class is the superclass of all classes?
-Answer:
+Answer: Java.lang.Object class is the root or superclass of the class hierarchy.
 
 What is difference between path and classpath variables?
-Answer:
+Answer: Path is set for java tools in java programs like java and javac, which are used to compile your code.
+        Whereas, Classpath is used by System or Application class loader to locate and load compile Java bytecodes stored in the
+        '. class file'.
 
 What is the difference between an Interface and Abstract class?
-Answer:
+Answer: Interface can have only abstract methods. An abstract class can have abstract and non-abstract methods.
 
 Can you make an Object from an Interface and Abstract class? If yes or no, how would you do it?
-Answer:
+Answer:We cannot create objects of an Interface and abstract class. To implement features of an abstract class, we inherit subclasses from it
+       and create objects of the subclass
 
 What is Access Modifier?
-Answer:
+Answer: Access modifiers in Java helps to restrict the scope of a class, constructor, variable, method, or data member. They set the accessibility
+        of them.
 
 What is OOP? Define each OOP concept.
-Answer:
+Answer: OOP stands for Object Oriented Programming.
+       - Encapsulation: Encapsulation is the mechanism of hiding of data implementation by restricting access to public methods.
+       - Polymorphism: Polymorphism means "many forms", and it occurs when we have many classes that are related to each other by inheritance.
+       - Inheritance: Inheritance is the procedure in which one class inherits the attributes and methods of another class.
+       - Abstraction: Abstraction is the concept of object-oriented programming that “shows” only essential attributes and “hides” unnecessary information.
 
 What is Java Package and which package is imported by default?
-Answer:
+Answer: Java Package is like a container that holds the collection of classes and java.lang is imported by default.
 
 What is an API? List some API's that you have used so far.
-Answer:
+Answer: Application Programming Interface, It delivers a user response to a system and sends the system’s response back to a user. JSON, Weather, Google maps.
 
 Does java support multiple inheritance? Why or why not?
-Answer:
+Answer: Java does not support multiple inheritance because of ambiguity problem. The problem with multiple inheritance is that two classes may define different
+        ways of doing the same thing, and the subclass can't choose which one to pick.
 
 What is method overloading? List all of the different ways to overload.
-Answer:
+Answer: When two methods have same name but different parameters is called Method overloading.
+        Method overloading can be done by changing:
+        -The number of parameters in two methods.
+        -The data types of the parameters of methods.
+        -The Order of the parameters of methods.
 
 Explain exceptions in java and how to handle them.
-Answer:
+Answer: An exception is an event that disrupts the normal flow of the program. The try-catch is the simplest method of handling exceptions. Put the code you
+        want to run in the try block, and any Java exceptions that the code throws are caught by one or more catch blocks
 
 What is static keyword? When and how do we use it?
-Answer:
+Answer: The static keyword in Java is used to share the same variable or method of a given class. It is used for memory management.
+        and we use it using a class name.
 
 What is final keyword? When and how do we use it?
-Answer:
+Answer:It is a reserve keyword and is used for restricting functionalities. The final keyword is useful when you want a
+        variable to always store the same/Constant value. We use it by declaring the Final keyword.
 
 Explain the difference between final, finally and finalize?
-Answer:
+Answer: -Final: It is the keyword and access modifier which is used to apply restrictions on a class, method or variable.
+        -Finally: finally is the block in Java Exception Handling to execute the important code whether the exception occurs or not.
+        -finalize: finalize is the method in Java which is used to perform clean up processing just before object is garbage collected.
+
+        The basic difference between final, finally and finalize is that the final is an access modifier, finally is the block in Exception
+        Handling and finalize is the method of object class.
 
 What is a constructor?
-Answer:
+Answer: A constructor in Java is a special method that is used to initialize objects of the class
 
 Can we have multiple constructors in a class?
-Answer:
+Answer:  There can be multiple constructors in a class. However, the parameter list of the constructors should not be same.
 
 If we don't have a constructor declared, what is called during the object creation?
-Answer:
+Answer: By default compilor will make a zero argument contructor.
 
 What is "this" keyword in Java? When would we use it?
-Answer:
+Answer: The this keyword refers to the current object in a method or constructor.
+        Use of the this keyword is to eliminate the confusion between class attributes and parameters with the same name.
 
 What is "super" keyword in Java? What are some scenarios we would use it?
-Answer:
+Answer: The super keyword in Java is a reference variable which is used to refer immediate parent class object.
+
 
 What does JVM stand for?
-Answer:
+Answer: Java Virtual Machine
 
 Is JVM platform independent?
 Answer:
