@@ -168,55 +168,61 @@ What is Enum?
 Answer: A Java Enum is a special Java type used to define collections of constants.
 
 What is Iterator?
-Answer:
+Answer: An Iterator is an object that can be used to loop through collections, like ArrayList and HashSet.
+        It is called an "iterator" because "iterating" is the technical term for looping.
 
 Which one will take more memory: an int or Integer? Why?
-Answer:
+Answer: Integer will take more memory as it is an object while int is a primitive data type which takes less bytes to store than an integer.
 
 Why are Strings considered to be immutable in Java?
-Answer:
+Answer: The Strings are immutable in Java because of the security, synchronization and concurrency, caching, and class loading.
 
 What is constructor chaining in Java?
-Answer:
+Answer: Constructor chaining is the process of calling one constructor from another constructor with respect to current object.
+        A constructor is called from another constructor in the same class.
 
 The difference between Serial and Parallel Garbage Collector?
-Answer:
+Answer: The difference between serial and parallel garbage collector is that serial garbage collector uses a single thread for garbage
+        collection process while the parallel garbage collector uses multiple threads for the garbage collection.
 
 What does JIT stands for?
-Answer:
+Answer: It stands for Just-In-Time,
 
 Explain the process of Java garbage collection?
-Answer:
+Answer: Java garbage collection is the process by which Java programs perform automatic memory management. Java programs compile to bytecode
+        that can be run on a Java Virtual Machine, or JVM for short. When Java programs run on the JVM, objects are created on the heap, which is a portion
+        of memory dedicated to the program. Eventually, some objects will no longer be needed. The garbage collector finds these unused objects and deletes them to free up memory.
 
 Can you guarantee the garbage collection process?
-Answer:
+Answer: No, because Garbage collection does not guarantee that a program will not run out of memory.
 
 What is the difference between stack and heap in Java?
-Answer:
+Answer: The difference between heap and stack is that stack memory is used to store local variables and function calls while heap memory is used to store objects in Java.
 
 What is reflection in Java and why is it useful?
-Answer:
+Answer:In Java, reflection allows us to inspect and manipulate classes, interfaces, constructors, methods, and fields at run time.
+       Java Reflection is useful because it makes it possible to inspect classes, interfaces, fields and methods at runtime, without knowing the names of the classes, methods etc
 
 What is multithreading in Java?
-Answer:
+Answer: Multithreading in Java is a process of executing multiple threads simultaneously whereas a thread is the smallest unit of processing.
 
 What is synchronization in Java?
-Answer:
+Answer: Synchronization in Java is the capability to control the access of multiple threads to any shared resource.
 
 What is a Framework?
-Answer:
+Answer: A framework is a structure that you can build software on. It serves as a foundation.
 
 What are the testing Frameworks available in Java?
-Answer:
+Answer: Selenium, Serenity, Gauge, TestNG and more.
 
 What are jUnit and testNG?
-Answer:
+Answer: JUnit is an open-source framework used to trigger and write tests. TestNG is a Java-based framework that is an upgraded option for running tests.
 
 What are the dependencies for this project?
-Answer:
+Answer: mysql-connector-java, poi-javadoc, protobuf-java etc.
 
 What is dependency injection in Java?
-Answer:
+Answer: Dependency injection (DI) is the concept in which objects get other required objects from outside.
 
 Explain what static binding and dynamic binding is?
-Answer:
+Answer: Static binding uses Type information for binding while Dynamic binding uses Objects to resolve binding.
