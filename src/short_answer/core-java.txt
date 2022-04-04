@@ -123,10 +123,10 @@ Is JVM platform independent?
 Answer: JVM is NOT platform independent.
 
 What version of Java are you using?
-Answer:
+Answer: 11.0.14
 
 What does JAR stand for?
-Answer:
+Answer: Java ARchive.
 
 What is the difference between JDK and JVM?
 Answer:
