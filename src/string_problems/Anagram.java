@@ -20,6 +20,9 @@ public class Anagram {
             String s1 = "TAR";
             String s2 = "RAT";
 
+            s1 = s1.toLowerCase();
+            s2 = s2.toLowerCase();
+
             // check if length is same
             if (s1.length() == s2.length()) {
 
