@@ -8,7 +8,17 @@ public class Palindrome {
 
       Create a method to check if any given String is a palindrome or not.
      */
+    public static void main(String args[]){
 
-    // Implement here
+        String st = "civic";
+        StringBuffer buffer = new StringBuffer(st);
+        buffer.reverse();
+        String data = buffer.toString();
+        if(st.equals(data)){
+            System.out.println("Given String is palindrome");
+        }else{
+            System.out.println("Given String is not palindrome");
+        }
+    }
 
 }
