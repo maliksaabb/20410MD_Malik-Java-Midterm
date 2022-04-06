@@ -1,13 +1,21 @@
 package math_problems;
 
-public class FindMissingNumber {
+import java.util.*;
+import java.util.Arrays;
+class  FindMissingNumber {
 
-    /** INSTRUCTIONS
-     * Write a method to find the missing number from the array.
-     */
+    public static int findMissingNumber(int[] array)
+    {
+        int n=array.length;
+        int sum=((n+1)*(n+2))/2;
+        for(int i=0;i<n;i++)
 
-    public static void main(String[] args) {
-        int[] array = new int[] {10, 2, 1, 4, 5, 3, 7, 8, 6};
-
+            sum-=array[i];
+        return sum;
+    }
+    public static void main(String[] args)
+    {
+        int[] a = {10, 2, 1, 4, 5, 3, 7, 8, 6};
+        System.out.println(findMissingNumber(a));
     }
 }
