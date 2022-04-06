@@ -24,4 +24,4 @@ to understand the solution
 - Once submissions are in, we will be reviewing the midterm in class together.
 
 
-#### ***ENJOY THE PROCESS & GOOD LUCK!*** Checking commit
+#### ***ENJOY THE PROCESS & GOOD LUCK!***
