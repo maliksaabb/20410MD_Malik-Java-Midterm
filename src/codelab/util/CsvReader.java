@@ -18,8 +18,8 @@ public class CsvReader {
      **/
 
     public static void main(String[] args) {
-
-        String csvFilePath = System.getProperty("user.dir") + "/src/codelab/status/roster.csv";
+        int aveScore=0;
+        String csvFilePath = System.getProperty("user.dir") + "/src/codelab/data/roster.csv";
         String row;
         String csvSplitBy = ",";
         BufferedReader br;
@@ -36,6 +36,8 @@ public class CsvReader {
                 String[] rowArray = row.split(csvSplitBy);
                 roster.add(new Student(rowArray[5].replace("\"", ""), rowArray[4].replace("\"",
                         ""), Integer.parseInt(rowArray[10])));
+
+                aveScore+=Integer.parseInt(rowArray[10]);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -46,6 +48,9 @@ public class CsvReader {
         for (Student student : roster) {
             System.out.println(convertNumberOfProblemsSolved(student));
         }
+
+        System.out.println("");
+        System.out.println("Average Score Of the Class = "+(aveScore/roster.size()));
     }
 
     private static String convertNumberOfProblemsSolved(Student student) {
