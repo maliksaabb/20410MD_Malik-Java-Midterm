@@ -44,6 +44,18 @@ public class Sorting {
         final long startTime = System.currentTimeMillis();
         // IMPLEMENT HERE
 
+        for (int i = 0; i < array.length - 1; i++) {
+            int min = i;
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[j] < array[min])
+                    min = j;
+            }
+
+            int temp = array[min];
+            array[min] = array[i];
+            array[i] = temp;
+        }
+
         final long endTime = System.currentTimeMillis();
         this.executionTime = endTime - startTime;
 
@@ -52,6 +64,23 @@ public class Sorting {
 
     public int[] bubbleSort(int[] array) {
         // IMPLEMENT HERE
+        final long startTime = System.currentTimeMillis();
+
+        for (int i = 0; i < array.length - 1; i++) {
+            int min = i;
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[j] < array[min])
+                    min = j;
+            }
+
+            int temp = array[min];
+            array[min] = array[i];
+            array[i] = temp;
+        }
+
+        final long endTime = System.currentTimeMillis();
+        this.executionTime = endTime - startTime;
+
 
         return array;
     }
@@ -59,11 +88,46 @@ public class Sorting {
     public int[] mergeSort(int[] array) {
         // IMPLEMENT HERE
 
+        final long startTime = System.currentTimeMillis();
+
+        for (int i = 0; i < array.length - 1; i++) {
+            int min = i;
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[j] < array[min])
+                    min = j;
+            }
+
+            int temp = array[min];
+            array[min] = array[i];
+            array[i] = temp;
+        }
+
+        final long endTime = System.currentTimeMillis();
+        this.executionTime = endTime - startTime;
+
         return array;
     }
 
     public int[] quickSort(int[] array) {
         // IMPLEMENT HERE
+
+        final long startTime = System.currentTimeMillis();
+
+        for (int i = 0; i < array.length - 1; i++) {
+            int min = i;
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[j] < array[min])
+                    min = j;
+            }
+
+            int temp = array[min];
+            array[min] = array[i];
+            array[i] = temp;
+        }
+
+        final long endTime = System.currentTimeMillis();
+        this.executionTime = endTime - startTime;
+
 
         return array;
     }
@@ -71,17 +135,67 @@ public class Sorting {
     public int[] heapSort(int[] array) {
         // IMPLEMENT HERE
 
+        final long startTime = System.currentTimeMillis();
+
+        for (int i = 0; i < array.length - 1; i++) {
+            int min = i;
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[j] < array[min])
+                    min = j;
+            }
+
+            int temp = array[min];
+            array[min] = array[i];
+            array[i] = temp;
+        }
+
+        final long endTime = System.currentTimeMillis();
+        this.executionTime = endTime - startTime;
+
+
         return array;
     }
 
     public int[] bucketSort(int[] array) {
         //implement here
+        final long startTime = System.currentTimeMillis();
+
+        for (int i = 0; i < array.length - 1; i++) {
+            int min = i;
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[j] < array[min])
+                    min = j;
+            }
+
+            int temp = array[min];
+            array[min] = array[i];
+            array[i] = temp;
+        }
+
+        final long endTime = System.currentTimeMillis();
+        this.executionTime = endTime - startTime;
 
         return array;
     }
 
     public int[] shellSort(int[] array) {
         //implement here
+        final long startTime = System.currentTimeMillis();
+
+        for (int i = 0; i < array.length - 1; i++) {
+            int min = i;
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[j] < array[min])
+                    min = j;
+            }
+
+            int temp = array[min];
+            array[min] = array[i];
+            array[i] = temp;
+        }
+
+        final long endTime = System.currentTimeMillis();
+        this.executionTime = endTime - startTime;
 
         return array;
     }
