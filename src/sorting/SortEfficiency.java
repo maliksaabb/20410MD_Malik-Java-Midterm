@@ -40,7 +40,7 @@ public class SortEfficiency {
                 + selectionSortExecutionTime + " milliseconds");
 
         // Insert sorted array into a database table, with the desired table name and column name
-        ssdb.insertIntegerArray("selection_sort", "sorted_numbers", numberArray);
+        ssdb. insertIntegerArray("selection_sort", "sorted_numbers", numberArray);
 
         // Retrieve all elements from the newly created table
         String query = "SELECT * FROM SELECTION_SORT";

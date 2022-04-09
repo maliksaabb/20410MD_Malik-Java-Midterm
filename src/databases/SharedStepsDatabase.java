@@ -19,7 +19,7 @@ public class SharedStepsDatabase {
     public static PreparedStatement ps = null;
     public static ResultSet resultSet = null;
     static String systemPath = System.getProperty("user.dir");
-    static String propPath = "\\src\\secret.properties";
+    static String propPath = "/src/secret.properties";
     private static final File file = new File(systemPath + propPath);
 
     public SharedStepsDatabase() {
@@ -54,7 +54,7 @@ public class SharedStepsDatabase {
 
     private static Properties loadProperties() throws IOException {
         Properties prop = new Properties();
-        InputStream ism = new FileInputStream("src/secret.properties");
+        InputStream ism = new FileInputStream(file);
         prop.load(ism);
         ism.close();
         return prop;
@@ -160,7 +160,7 @@ public class SharedStepsDatabase {
             ps.executeUpdate();
 
             ps = connect.prepareStatement(
-                    "CREATE TABLE `" + tableName + "` (`ID` int(11) NOT NULL AUTO_INCREMENT,`sorted_numbers` bigint(20) DEFAULT NULL,  PRIMARY KEY (`ID`) );");
+                    "CREATE TABLE `" + tableName + "` (`ID` int(11) NOT NULL AUTO_INCREMENT,`"+ columnName + "` bigint(20) DEFAULT NULL,  PRIMARY KEY (`ID`) );");
             ps.executeUpdate();
 
             for (int n = 0; n < array.length; n++) {

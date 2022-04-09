@@ -21,7 +21,7 @@ public class CnnAPI {
      * Get your API Key from this website. Once you have your key, you can append your key to the end of the URL, as
      * shown below.
      *
-     *  https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=YOUR_API_KEY
+     *  https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=21d81a52a8c945fab8e6933bb0481b3e
      *
      * When you navigate to that full URL, you will be submitting a request, and the response should be CNN's
      * top headline news.
