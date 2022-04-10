@@ -2,21 +2,20 @@ package data_structures;
 
 import databases.SharedStepsDatabase;
 
-import java.sql.SQLException;
 import java.util.*;
 
 public class UseMap {
 
+    /** INSTRUCTIONS
+     *
+     * Implement code to demonstrate how to interact with a database connection, using a Map
+     * You must insert the map into a table, and then you must submit & execute a query to retrieve
+     * all the submitted data (retrieval does not need to be stored as a map - you can use any data structure)
+     *
+     * Use For-Each loop and While-loop with Iterator to retrieve data.
+     */
+
     public static void main(String[] args) throws Exception {
-        /*
-         * Implement code to demonstrate how to interact with a database connection, using a Map
-         * You must insert the map into a table, and then you must submit & execute a query to retrieve
-         * all the data_structures.data (retrieval does not need to be stored as a map)
-         *
-         * Use For-Each loop and While-loop with Iterator to retrieve data_structures.data.
-         *
-         * Store and retrieve data_structures.data from/to a database table.
-         */
 
         HashMap<Object, Object> map = new HashMap<>();
         map.put(8454, "lamia");
@@ -37,13 +36,5 @@ public class UseMap {
 
         // IMPLEMENT HERE
 
-        sql.insertMap(tableName, map);
-
-        String query = "SELECT * FROM test_hash_map";
-        String value = null;
-        value = String.valueOf(sql.executeQueryReadAllSingleColumn(query, "value"));
-
-        System.out.println(value);
     }
-
 }
